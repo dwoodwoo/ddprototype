@@ -21,15 +21,15 @@
   <div class="form-group">
     <label for="Any" class="col-xs-2">Any</label>
     <div class="input-group col-xs-10">
-    <input id="searchall" type="text" class="form-control" name="any" ng-model="search.$" delayed-model="searchall" data-delay="750" >
+    <input id="search" type="text" class="form-control" delayed-model="search.$" data-delay="500" >
     </div>
   </div>
 
-<!--   <div class="form-group">
+   <div class="form-group">
     <label for="last_name" class="col-xs-2">Last Name</label>
     <div class="input-group col-xs-10">
     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-    <input type="text" class="form-control" name="last_name" ng-model="search.last_name">
+    <input id="search.last_name" type="text" class="form-control" delayed-model="search.last_name" data-delay="500">
     </div>
   </div>
 
@@ -37,11 +37,11 @@
     <label for="first_name" class="col-xs-2">First Name</label>
     <div class="input-group col-xs-10">
     <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-    <input type="text" class="form-control" name="first_name"  ng-model="search.first_name">
+    <input id="search.first_name" type="text" class="form-control" delayed-model="search.first_name" data-delay="500">
     </div>
   </div>
 
-  <div class="form-group">
+<!--  <div class="form-group">
     <label for="address_1" class="col-xs-2">Address 1</label>
     <div class="col-xs-10">
       <input type="text" class="form-control " name="address_1"  ng-model="search.address1">
@@ -96,7 +96,7 @@
 <br clear=all>
 
 <ul>
-<li ng-repeat="politicalentity in politicalentities | filter:searchall">
+<li ng-repeat="politicalentity in politicalentities | filter:search:strict">
 {{politicalentity.first_name}} {{politicalentity.last_name}},  {{politicalentity.address1}}, {{politicalentity.address2}} , {{politicalentity.city}}, {{politicalentity.state}} {{politicalentity.zip}}, {{politicalentity.email}}, {{politicalentity.phone}}
 </ul>
 
