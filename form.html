@@ -21,106 +21,129 @@
 </div>
 <form class="form-horizontal col-xs-offset-2 col-xs-6">
 
+
+  <div class="form-group">
+      <button ng-click="formdisplay = !formdisplay">toggle additional fields</button>
+  </div>
+
   <div class="form-group">
     <label for="Any" class="col-xs-2">Any</label>
     <div class="input-group col-xs-10">
     <input id="search" type="text" autofocus class="form-control" delayed-model="search.$" data-delay="500" >
     </div>
+
   </div>
 
+
+
+    <div ng-show="formdisplay">
+
+    <div class="form-group">
+      <label for="first_name" class="col-xs-2">First Name</label>
+      <div class="input-group col-xs-10">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+      <input id="search.first_name" type="text" class="form-control" delayed-model="search.first_name" data-delay="500">
+      </div>
+    </div>
+
+     <div class="form-group">
+      <label for="last_name" class="col-xs-2">Last Name</label>
+      <div class="input-group col-xs-10">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
+      <input id="search.last_name" type="text" class="form-control" delayed-model="search.last_name" data-delay="500">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="address1" class="col-xs-2">Address 1</label>
+      <div class="col-xs-10">
+        <input id="search.address1" type="text" class="form-control" delayed-model="search.address1" data-delay="500">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="address2" class="col-xs-2">Address 2</label>
+      <div class="col-xs-10">
+      <input id="search.address2" type="text" class="form-control" delayed-model="search.address2" data-delay="500">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="city" class="col-xs-2">City</label>
+      <div class="col-xs-10">
+      <input id="search.city" type="text" class="form-control" delayed-model="search.city" data-delay="500">
+      </div>
+    </div>
+
+
+    <div class="form-group">
+      <label for="state" class="col-xs-2">State</label>
+      <div class="col-xs-10">
+      <input id="search.state" type="text" class="form-control" delayed-model="search.state" data-delay="500">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="zip" class="col-xs-2">Zip</label>
+      <div class="col-xs-10">
+      <input id="search.zip" type="text" class="form-control" delayed-model="search.zip" data-delay="500">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="phone" class="col-xs-2">Phone</label>
+      <div class="col-xs-10 input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
+      <input id="search.phone" type="text" class="form-control" delayed-model="search.phone" data-delay="500">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email" class="col-xs-2">Email</label>
+      <div class="col-xs-10 input-group">
+      <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
+      <input id="search.email" type="text" class="form-control" delayed-model="search.email" data-delay="500">
+      </div>
+
+    </div> <!-- additional fields -->
+
+
+  </div>
   <div class="form-group">
-    <label for="first_name" class="col-xs-2">First Name</label>
-    <div class="input-group col-xs-10">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-    <input id="search.first_name" type="text" class="form-control" delayed-model="search.first_name" data-delay="500">
-    </div>
+      <button ng-click="selection = 'entities'">Show Entities (ctrl-e)</button>
+      <button ng-click="selection = 'transactions'">Show Transactions (ctrl-t)</button>
   </div>
-
-   <div class="form-group">
-    <label for="last_name" class="col-xs-2">Last Name</label>
-    <div class="input-group col-xs-10">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-    <input id="search.last_name" type="text" class="form-control" delayed-model="search.last_name" data-delay="500">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="address1" class="col-xs-2">Address 1</label>
-    <div class="col-xs-10">
-      <input id="search.address1" type="text" class="form-control" delayed-model="search.address1" data-delay="500">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label for="address2" class="col-xs-2">Address 2</label>
-    <div class="col-xs-10">
-    <input id="search.address2" type="text" class="form-control" delayed-model="search.address2" data-delay="500">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label for="city" class="col-xs-2">City</label>
-    <div class="col-xs-10">
-    <input id="search.city" type="text" class="form-control" delayed-model="search.city" data-delay="500">
-    </div>
-  </div>
-
-
-  <div class="form-group">
-    <label for="state" class="col-xs-2">State</label>
-    <div class="col-xs-10">
-    <input id="search.state" type="text" class="form-control" delayed-model="search.state" data-delay="500">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="zip" class="col-xs-2">Zip</label>
-    <div class="col-xs-10">
-    <input id="search.zip" type="text" class="form-control" delayed-model="search.zip" data-delay="500">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="phone" class="col-xs-2">Phone</label>
-    <div class="col-xs-10 input-group">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-earphone"></span></span>
-    <input id="search.phone" type="text" class="form-control" delayed-model="search.phone" data-delay="500">
-    </div>
-  </div>
-
-  <div class="form-group">
-    <label for="email" class="col-xs-2">Email</label>
-    <div class="col-xs-10 input-group">
-    <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span></span>
-    <input id="search.email" type="text" class="form-control" delayed-model="search.email" data-delay="500">
-
-    </div>
-  </div>
-
 
 <br clear=all>
 <p><b>Number of visible records:</b> {{(politicalentities|filter:search).length}}</p>
 <p><b>Total number of records:</b> {{politicalentities.length}}</p>
-<p>testcall: {{testcall | json}}</p>
+<!-- <p>testgetbyentity: {{testgetbyentity | json}}</p> -->
 
 
   <div class="animate-switch-container"
     ng-switch on="selection">
-      <div class="animate-switch" ng-switch-when="entities">Political Entities<br>
+      <div class="animate-switch" ng-switch-when="entities">
+
+      <h2>Political Entities</h2>
 
         <ol>
         <li ng-repeat="politicalentity in politicalentities | filter:search">
-        {{politicalentity.ID}} {{politicalentity.first_name}} {{politicalentity.last_name}},  {{politicalentity.address1}}, {{politicalentity.address2}} , {{politicalentity.city}}, {{politicalentity.state}} {{politicalentity.zip}}, {{politicalentity.email}}, {{politicalentity.phone}}
+        <a ng-click="showTransactions(politicalentity.ID)">{{politicalentity.ID}} {{politicalentity.first_name}} {{politicalentity.last_name}},
+        {{politicalentity.address1}},
+        {{politicalentity.address2}},
+        {{politicalentity.city}}, {{politicalentity.state}} {{politicalentity.zip}},
+        {{politicalentity.email}},
+        {{politicalentity.phone}}</a>
         </ol>
 
 
-
-
-Political Transactions
+      </div>
+      <div class="animate-switch" ng-switch-when="transactions">
+      <h2>Political Transactions</h2>
         <ol>
-        <li ng-repeat="politicaltransaction in politicaltransactions">
+        <li ng-repeat="politicaltransaction in testgetbyentity">
         {{politicaltransaction.Entity}}
         {{politicaltransaction.Amount}}
         {{politicaltransaction.Type}},
@@ -133,10 +156,12 @@ Political Transactions
         </ol>
 
 
+
+
+
+
       </div>
-      <div class="animate-switch" ng-switch-when="transactions">transactions</div>
-      <div class="animate-switch" ng-switch-default>default</div>
-      {{selection}}
+
   </div>
 
 

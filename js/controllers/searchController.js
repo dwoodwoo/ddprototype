@@ -18,17 +18,32 @@ app.controller('searchController', function($scope, $document, searchService, tr
             console.log($event.altKey);
             console.log($event.ctrlKey);
 
-            if ($event.charCode == 49 && $event.ctrlKey == true) {
-                console.log("control 1!!!");
-                $scope.selection = "entities";
-                }
-            if ($event.charCode == 50 && $event.ctrlKey == true) {
-                console.log("control 2!!!");
+            // number key pressed?
+            var myNum = $event.charCode - 48  // returns 0-9
+            if (myNum >= 0 && myNum <= 9 && $event.ctrlKey == true) {
+                $scope.testgetbyentity = transactionsService.politicaltransactionsByEntity(myNum);
                 $scope.selection = "transactions";
-                }
-            };
+            }
 
-            $scope.testcall = transactionsService.politicaltransactionsByEntity();
+            // other control
+
+            // ctrl-e for entities
+            if ($event.charCode == 5 && $event.ctrlKey == true) {
+                $scope.selection = "entities";
+            }
+
+            if ($event.charCode == 20 && $event.ctrlKey == true) {
+                $scope.selection = "transactions";
+            }
+
+        };
+
+
+            $scope.showTransactions = function (id) {
+                console.log('id = ' + id);
+                $scope.selection = "transactions";
+                $scope.testgetbyentity = transactionsService.politicaltransactionsByEntity(id);
+            }
 
 //debounce http://stackoverflow.com/questions/15304562/how-to-put-a-delay-on-angularjs-instant-search
         $scope.filterText = '';
