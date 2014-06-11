@@ -1,6 +1,7 @@
 // var filterApp = angular.module('filterApp', ['ui.bootstrap', 'angles', 'ngAnimate', 'duScroll', 'firebase'])
 
 app.controller('searchController', function($scope, $document, searchService, transactionsService, $timeout, $filter) {
+        window.scope = $scope;
 
         // DONE:  Link from filtering search form to specific candidate result page
         $scope.init = function(){
@@ -17,6 +18,8 @@ app.controller('searchController', function($scope, $document, searchService, tr
             console.log($event.charCode);
             console.log($event.altKey);
             console.log($event.ctrlKey);
+            console.log('$scope.foo = ' + $scope.foo);
+
 
             // number key pressed?
             var myNum = $event.charCode - 48  // returns 0-9
@@ -41,7 +44,12 @@ app.controller('searchController', function($scope, $document, searchService, tr
 
             $scope.showTransactions = function (id) {
                 console.log('id = ' + id);
+                console.log('$scope.foo = ' + $scope.foo);
                 $scope.selection = "transactions";
+
+
+
+
                 $scope.testgetbyentity = transactionsService.politicaltransactionsByEntity(id);
             }
 
